@@ -82,7 +82,7 @@ WHERE (de.dept_no IN (
 ----------------------------------------------------------------------------------------------------
 SELECT de.emp_no
      , emp.last_name
-	 , emp.first_name
+	, emp.first_name
 	 , dept.dept_name
 FROM dept_emp de
 JOIN employees emp ON
