@@ -72,7 +72,8 @@ FROM dept_manager dm
 JOIN employees emp ON
     (dm.emp_no = emp.emp_no)
 JOIN departments dept ON
-    (dm.dept_no = dept.dept_no);```
+    (dm.dept_no = dept.dept_no);
+```
 
 4. List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
  ```
@@ -85,7 +86,8 @@ FROM employees emp
 JOIN dept_emp de ON
      (emp.emp_no = de.emp_no)
 JOIN departments dept ON
-     (de.dept_no = dept.dept_no);```
+     (de.dept_no = dept.dept_no);
+```
 	 
 5. List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
 ```
@@ -94,7 +96,8 @@ SELECT emp.first_name
      , emp.sex
 FROM employees emp
 WHERE (emp.first_name = 'Hercules')
-  AND (emp.last_name LIKE 'B%');```
+  AND (emp.last_name LIKE 'B%')
+```
 
 6. List each employee in the Sales department, including their employee number, last name, and first name.
 ```
@@ -106,7 +109,8 @@ JOIN employees emp ON
     (de.emp_no = emp.emp_no)
 WHERE (de.dept_no IN (
                       SELECT dept_no FROM departments WHERE (dept_name = 'Sales')
-                     ));```
+                     ));
+```
 
 7. List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
 ```
@@ -119,7 +123,8 @@ JOIN employees emp ON
     (de.emp_no = emp.emp_no)
 JOIN departments dept ON
     (de.dept_no = dept.dept_no)
-WHERE (de.dept_no IN ('d005','d007'));```
+WHERE (de.dept_no IN ('d005','d007'));
+```
 
 8. List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
 ```
@@ -127,4 +132,5 @@ SELECT emp.last_name
      , count(emp.last_name) AS last_name_frequency_count
 FROM employees emp
 GROUP BY emp.last_name
-ORDER BY last_name_frequency_count DESC;```
+ORDER BY last_name_frequency_count DESC;
+```
